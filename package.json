@@ -1,7 +1,7 @@
 {
-  "name": "uni-preset-vue",
+  "name": "uniapp-boat",
   "version": "0.0.0",
-  "homepage": "https://yaolx.uniapp.boat/",
+  "homepage": "https://yaolx.github.io/uniapp-boat/",
   "scripts": {
     "dev:app": "uni -p app",
     "dev:app-android": "uni -p app-android",
