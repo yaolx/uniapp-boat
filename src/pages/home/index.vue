@@ -31,7 +31,7 @@ defineComponent({
   name: 'HelloWorld'
 })
 function back() {
-  uni.navigateBack({ delta: 1 })
+  uni.navigateBack()
 }
 </script>
 <style lang="scss">
