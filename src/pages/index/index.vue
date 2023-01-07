@@ -1,12 +1,13 @@
 <template>
   <view class="content">
+    <uni-nav-bar dark :fixed="true" shadow background-color="#007AFF" status-bar left-icon="left" left-text="返回" title="home" @click-left="back" />
     <image class="logo" src="/static/logo.png" />
     <view class="text-area">
       <text class="title">
         {{ title + '12' }}
       </text>
-      <button @click="tap">点击跳转到home</button>
     </view>
+    <button type="primary" @click="tap">点击跳转到详情页</button>
   </view>
 </template>
 
@@ -17,6 +18,9 @@ const title = ref('Hello')
 function tap() {
   console.log(111)
   uni.redirectTo({ url: '/pages/home/index' })
+}
+function back() {
+  console.log('###1')
 }
 </script>
 

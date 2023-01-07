@@ -65,6 +65,8 @@
     "@dcloudio/uni-mp-toutiao": "3.0.0-alpha-3061420221216001",
     "@dcloudio/uni-mp-weixin": "3.0.0-alpha-3061420221216001",
     "@dcloudio/uni-quickapp-webview": "3.0.0-alpha-3061420221216001",
+    "@dcloudio/uni-ui": "^1.4.23",
+    "sass": "^1.57.1",
     "vue": "^3.2.45",
     "vue-i18n": "^9.2.2"
   },
@@ -78,6 +80,7 @@
     "@types/node": "^16.18.11",
     "@typescript-eslint/eslint-plugin": "^5.48.0",
     "@typescript-eslint/parser": "^5.48.0",
+    "@uni-helper/uni-app-types": "^0.3.1",
     "concurrently": "^7.6.0",
     "eslint": "^8.31.0",
     "eslint-import-resolver-typescript": "^2.7.1",

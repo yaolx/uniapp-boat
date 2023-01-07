@@ -56,7 +56,7 @@ export default {
    * @param data 请求的参数
    * @param options 其他请求配置
    */
-  get: (url: string, data?: UniApp.RequestOptions['data'], options?: UniApp.RequestOptions) => {
+  get: (url: string, data?: UniApp.RequestOptions['data'], options?: UniApp.RequestOptions): Promise<any> => {
     return request({
       ...options,
       url,
@@ -70,7 +70,7 @@ export default {
    * @param data 请求的参数
    * @param options 其他请求配置
    */
-  post: (url: string, data?: UniApp.RequestOptions['data'], options?: UniApp.RequestOptions) => {
+  post: (url: string, data?: UniApp.RequestOptions['data'], options?: UniApp.RequestOptions): Promise<any> => {
     return request({
       ...options,
       url,

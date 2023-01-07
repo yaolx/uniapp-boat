@@ -11,10 +11,13 @@
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "lib": ["esnext", "dom"],
-    "types": ["@dcloudio/types"],
+    "types": ["@dcloudio/types", "@uni-helper/uni-app-types", "src/@types"],
     "paths": {
       "@/*": ["src/*"]
     }
+  },
+  "vueCompilerOptions": {
+    "nativeTags": ["block", "component", "template", "slot"]
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"]
 }

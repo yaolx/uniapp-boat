@@ -1,41 +1,52 @@
 <template>
-  <img alt="Vue logo" src="../../assets/logo.png" />
-  <h1>{{ msg }}</h1>
-  <p>
-    Recommended setup:
-    <a href="https://code.visualstudio.com/" target="_blank">VSCode</a>
-    +
-    <a href="https://marketplace.visualstudio.com/items?itemName=octref.vetur" target="_blank">Vetur</a>
-    +
-    <a href="https://marketplace.visualstudio.com/items?itemName=znck.vue-language-features-insiders" target="_blank"> Vue LaVue Language Features (Insiders) </a>
-  </p>
-  <p>
-    Make sure to use workspace version of TypeScript to get improved support via
-    <a href="https://github.com/znck/vue-developer-experience" target="_blank">@vuedx</a>. Note @vuedx is still experimental and this setup is provided for early feedback.
-  </p>
-  <button @click="count++">count is: {{ count }}</button>
-  <button @click="onHandler">请求数据</button>
-  <p>Edit <code>components/HelloWorld.vue</code> to test hot module replacement.</p>
+  <uni-nav-bar dark :fixed="true" shadow background-color="#007AFF" status-bar left-icon="left" left-text="返回" title="detail" @click-left="back" />
+  <div class="title">欢迎来到详情页</div>
+  <div class="btns">
+    <button type="primary" @click="count++">count is: {{ count }}</button>
+    <button type="primary" @click="onHandler">请求数据</button>
+  </div>
+  <div v-for="s in students" :key="s?.id" class="list">
+    {{ s?.name }}
+  </div>
 </template>
 
 <script setup lang="ts">
 import { ref, defineComponent } from 'vue'
 
 import request from '@/config/request'
+
+const count = ref(1)
+let students = ref<Partial<Student[]>>([])
 defineProps({
   msg: {
     default: '学vue3的走起1',
     type: String,
-    required: true
+    required: false
   }
 })
-const onHandler = () => {
-  request.get('/students').then((data) => {
-    console.log('EEEE', data)
-  })
+const onHandler = async () => {
+  students.value = await request.get('/students')
 }
 defineComponent({
   name: 'HelloWorld'
 })
-const count = ref(1)
+function back() {
+  uni.navigateBack({ delta: 1 })
+}
 </script>
+<style lang="scss">
+.title {
+  text-align: center;
+  margin: 20px;
+}
+
+.btns {
+  display: flex;
+  justify-content: center;
+}
+
+.list {
+  display: flex;
+  justify-content: center;
+}
+</style>
