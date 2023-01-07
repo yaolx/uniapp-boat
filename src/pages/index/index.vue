@@ -1,6 +1,6 @@
 <template>
   <view class="content">
-    <uni-nav-bar dark :fixed="true" shadow background-color="#007AFF" status-bar left-icon="left" left-text="返回" title="home" @click-left="back" />
+    <uni-nav-bar dark :fixed="true" shadow background-color="#007AFF" status-bar title="home" />
     <image class="logo" src="/static/logo.png" />
     <view class="text-area">
       <text class="title">
@@ -16,11 +16,7 @@ import { ref } from 'vue'
 
 const title = ref('Hello')
 function tap() {
-  console.log(111)
-  uni.redirectTo({ url: '/pages/home/index' })
-}
-function back() {
-  console.log('###1')
+  uni.navigateTo({ url: '/pages/home/index' })
 }
 </script>
 
