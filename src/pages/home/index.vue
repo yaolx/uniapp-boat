@@ -19,7 +19,7 @@ const count = ref(1)
 let students = ref<Partial<Student[]>>([])
 defineProps({
   msg: {
-    default: '学vue3的走起1',
+    default: '学uniapp的走起',
     type: String,
     required: false
   }
@@ -31,7 +31,7 @@ defineComponent({
   name: 'HelloWorld'
 })
 function back() {
-  uni.navigateBack({ delta: 1 })
+  uni.navigateBack()
 }
 </script>
 <style lang="scss">
