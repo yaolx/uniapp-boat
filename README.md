@@ -1,8 +1,10 @@
 # uniapp-boat
 
-vite + typescript 创建 uni-app 脚手架
+vite + vue3 + typescript 的 uni-app 脚手架
 
 # 前言
+
+全端开发脚手架的选型，决定从 uni-app 入手，而且用最新的构建工具 vite，技术栈选用 vue3+typescript 进行开发。
 
 # 实现功能
 
@@ -76,6 +78,10 @@ envDir: path.resolve(__dirname, 'config/env')
 
 ## 集成 pinia
 
+`pnpm add pinia pinia-plugin-persistedstate`
+
+使用`pinia-plugin-persistedstate`做持久化
+
 ## 封装 uni-request
 
 - 统一配置接口地址
@@ -120,6 +126,10 @@ envDir: path.resolve(__dirname, 'config/env')
     "nativeTags": ["block", "component", "template", "slot"]
   }
 ```
+
+## 集成 actions、pages 做自动发布
+
+访问线上地址[uniapp-boat](https://yaolx.github.io/uniapp-boat/)
 
 # 运行
 

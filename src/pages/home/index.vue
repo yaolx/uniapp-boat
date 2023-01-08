@@ -2,7 +2,7 @@
   <uni-nav-bar dark :fixed="true" shadow background-color="#007AFF" status-bar left-icon="left" left-text="返回" title="detail" @click-left="back" />
   <div class="title">欢迎来到详情页</div>
   <div class="btns">
-    <button type="primary" @click="count++">count is: {{ count }}</button>
+    <button type="primary" @click="counter.increment">count is: {{ counter.count }}</button>
     <button type="primary" @click="onHandler">请求数据</button>
   </div>
   <div v-for="s in students" :key="s?.id" class="list">
@@ -14,8 +14,9 @@
 import { ref, defineComponent } from 'vue'
 
 import request from '@/config/request'
+import useStore from '@/store'
 
-const count = ref(1)
+const counter = useStore()
 let students = ref<Partial<Student[]>>([])
 defineProps({
   msg: {
