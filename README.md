@@ -80,7 +80,7 @@ envDir: path.resolve(__dirname, 'config/env')
 
 `pnpm add pinia pinia-plugin-persistedstate`
 
-使用`pinia-plugin-persistedstate`做持久化
+`pinia-plugin-persistedstate`做持久化
 
 ## 封装 uni-request
 
